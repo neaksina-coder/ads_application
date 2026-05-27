@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security — Neak Sina Ads Manager</title>
+  <link rel="canonical" href="https://www.neaksina.site/security.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html"><span class="logo-badge">NS</span><span>Neak Sina Ads Manager</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#features">Features</a></li><li><a href="api-use.html">API Use</a></li><li><a href="security.html">Security</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a class="btn-contact" href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <main class="page-content">
+    <h1>Security</h1>
+    <p class="date">Last updated: May 25, 2026</p>
+    <h2>Authentication and authorization</h2>
+    <p>Google Ads account access is based on OAuth authorization. Neak Sina Ads Manager does not collect Google account passwords. API actions are limited to accounts and permissions authorized by the user.</p>
+    <h2>Credential handling</h2>
+    <p>Access tokens, refresh tokens, client secrets, developer tokens, and related credentials are treated as confidential. Production credentials are stored outside public source code and are accessible only to authorized operators.</p>
+    <h2>Google Ads API Credential Security</h2>
+    <p>The Google Ads API developer token is stored only in backend server environment variables. It is never included in frontend code, JavaScript bundles, browser cookies, or API responses sent to the client. OAuth refresh tokens are encrypted using AES-256 before storage. Access tokens are held in memory on the server only and are never persisted or sent to the browser.</p>
+    <h2>Data protection</h2>
+    <p>The platform uses HTTPS, role-based administrative access, audit logs, limited data retention, and operational monitoring to reduce risk to user and advertising data.</p>
+    <h2>Rate Limiting and Abuse Prevention</h2>
+    <p>The platform enforces per-user and per-account rate limits on Google Ads API calls. Retry logic uses exponential backoff and does not attempt repeated mutations that could create duplicate campaign objects. Unusual API activity triggers automated alerts.</p>
+    <h2>User control</h2>
+    <p>Users can request removal of connected accounts and data. Users can also revoke OAuth access directly through their Google Account permissions page.</p>
+    <h2>Security contact</h2>
+    <p>Report security concerns to <a href="mailto:support@neaksina.site">support@neaksina.site</a>.</p>
+  </main>
+  <footer>
+    <p>Neak Sina Ads Manager is not affiliated with Google LLC. Google Ads is a trademark of Google LLC. Business location: Cambodia.</p>
+    <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/security.html">Security</a><a href="/design-document.pdf" target="_blank" rel="noopener">Design Document</a></div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
