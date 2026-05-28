@@ -8,19 +8,19 @@ if (hamburger && navLinks) {
   });
 }
 
+document.querySelectorAll('.nav-links a').forEach((a) => {
+  a.addEventListener('click', () => {
+    if (navLinks) navLinks.classList.remove('open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener('click', (e) => {
     const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });
-});
-
-document.querySelectorAll('.nav-links a').forEach((a) => {
-  a.addEventListener('click', () => {
-    if (navLinks) navLinks.classList.remove('open');
-    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
   });
 });
